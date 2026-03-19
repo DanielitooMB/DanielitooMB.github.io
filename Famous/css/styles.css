@@ -2,38 +2,49 @@ body {
   background-color: white;
 }
 
-.image-profile-2 {
+/*contenedor. Padre de .icon.circle*/
+.profile-container {
   width: min(640px, 92vw);
   margin: 0 auto;
+  /*Ser el punto de referencia para el hijo*/
   position: relative;
+  /*Agrega espacio vacío abajo del contenedor*/
   padding-bottom: 50px;
 }
 
-.image-profile-2 > img {
+/*Imagen banner-img dentro del contenedor .profile-container*/
+.profile-container > .banner-img {
   width: 100%;
   height: auto;
+  /*Elimina el espacio de abajo*/
   display: block;
   border-radius: 14px;
 }
 
+/*hijo de .profile-container*/
 .icon-circle {
+  /*Posicionarlo dentro del padre relative*/
   position: absolute;
+  /*Le dice al elemento que se pegue al borde inferior de su padre.*/
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.circle-profile-2 {
+/*Imagen de perfil*/
+.icon-circle-img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   border: 5px solid white;
+  /*Llenar todo el contenedor sin recortes*/
   object-fit: cover;
   display: block;
 }
 
+/*Modifica la Imagen de foto de perfil cuando llegue a 600px o menos para hacerlo más pequeña*/
 @media (max-width: 600px) {
-  .circle-profile-2 {
+  .icon-circle-img {
     width: 95px;
     height: 95px;
   }
