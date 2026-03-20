@@ -7,13 +7,12 @@ body {
 
 /*contenedor. Padre de .icon.circle*/
 .profile-container {
-  padding-top: 10px;
   width: min(640px, 92vw);
   margin: 0 auto;
   /*Ser el punto de referencia para el hijo*/
   position: relative;
   /*Agrega espacio vacío abajo del contenedor*/
-  padding-bottom: 55px;
+  padding-bottom: 60px;
 }
 
 /*Imagen banner-img dentro del contenedor .profile-container*/
@@ -23,14 +22,15 @@ body {
   /*Elimina el espacio de abajo*/
   display: block;
   border-radius: 14px;
+  margin-top: 10px;
 }
 
 /*hijo de .profile-container*/
 .icon-circle {
   position: absolute;
-  top: 5px;
+  bottom: -10px;
   left: 50%;
-  transform: translate(-50%, -135%);
+  transform: translateX(-50%);
 }
 
 /*Imagen de perfil dentro del contenedor icon-circle*/
@@ -57,10 +57,11 @@ body {
 .social-media-container {
   background-color: rgba(34, 39, 42);
   width: min(900px, 92vw);
-  margin: 50px auto auto;
+  margin: 100px auto auto;
   display: flex;
   height: min(600px, 92vw);
   border-radius: 14px;
   position: relative;
   border: 1px solid rgba(181, 175, 175, 0.283);
+  bottom: 10px;
 }
