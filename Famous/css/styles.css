@@ -9,7 +9,7 @@ body {
   /*Ser el punto de referencia para el hijo*/
   position: relative;
   /*Agrega espacio vacío abajo del contenedor*/
-  padding-bottom: 50px;
+  padding-bottom: 55px;
 }
 
 /*Imagen banner-img dentro del contenedor .profile-container*/
