@@ -5,6 +5,18 @@ body {
   padding: 0;
 }
 
+.back {
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  opacity: 0.;
+  z-index: -1;
+  background-image:  radial-gradient(#5c2d2d 0.5px, transparent 0.5px), radial-gradient(#b1a095 0.5px, #ffffff00 0.5px);
+  background-size: 21px 21px;
+  background-position: 0 0,10px 10px;
+}
+
 /*contenedor. Padre de .icon.circle*/
 .profile-container {
   width: min(640px, 92vw);
@@ -60,7 +72,7 @@ body {
   width: min(900px, 92vw);
   margin: 100px auto auto;
   display: flex;
-  height: min(600px, 92vw);
+  height: min(250px, 92vw);
   border-radius: 14px;
   position: relative;
   border: 1px solid rgba(181, 175, 175, 0.283);
