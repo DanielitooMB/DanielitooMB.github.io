@@ -6,6 +6,7 @@
     <title>DanielitooMB | Links</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="css/styles.css">
     <script src="share.js" defer></script>
 </head>
@@ -46,11 +47,29 @@
         } catch (error) {
           console.error("Error sharing:", error);
         }
-      } else {
-        // Copia la URL al portapapeles como fallback
-        navigator.clipboard.writeText(window.location.href)
-          .then(() => alert("Link copied! Paste it anywhere to share."))
-          .catch(() => alert("Copy this link: " + window.location.href));
+        } else {
+          navigator.clipboard.writeText(window.location.href)
+            .then(() => {
+              Swal.fire({
+                icon: "success",
+                title: "Link copied!",
+                text: "Paste it anywhere to share.",
+                timer: 2000,
+                showConfirmButton: false,
+                toast: true,
+                position: "top",
+                theme: 'dark'
+              });
+            })
+            .catch(() => {
+              Swal.fire({
+                title: "Share this link",
+                text: window.location.href,
+                icon: "info",
+                confirmButtonText: "OK",
+                theme: 'dark'
+              });
+            });
         }
     });
   </script>
