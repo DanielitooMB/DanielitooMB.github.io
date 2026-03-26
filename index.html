@@ -47,9 +47,11 @@
           console.error("Error sharing:", error);
         }
       } else {
-        // Mensaje si el navegador no soporta compartir
-        alert("Web Share API not supported on this browser. You can copy the URL instead.");
-      }
+        // Copia la URL al portapapeles como fallback
+        navigator.clipboard.writeText(window.location.href)
+          .then(() => alert("Link copied! Paste it anywhere to share."))
+          .catch(() => alert("Copy this link: " + window.location.href));
+        }
     });
   </script>
 
