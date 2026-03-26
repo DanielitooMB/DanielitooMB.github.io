@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DanielitooMB | Links</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="share.js" defer></script>
 </head>
 <body>
   <div class="back"></div>
@@ -23,8 +25,33 @@
         <a class="link-card instagram" href="https://instagram.com/DanielitooMB"
         aria-label="Instagram" target="_blank">Instagram</a>
     </nav>
-
   </div>
+  <div class="share-container">
+    <a id="share-button">
+      <i class="fa-solid fa-arrow-up-from-bracket"></i>
+    </a>
+  </div>
+  <script>
+    const shareButton = document.getElementById("share-button");
+
+    shareButton.addEventListener("click", async () => {
+      //Verifica si el navegador soporta la API de compartir
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: document.title, //Obtiene el título de la página
+            url: window.location.href, //Obtiene la URL actual
+          });
+          console.log("Successful share");
+        } catch (error) {
+          console.error("Error sharing:", error);
+        }
+      } else {
+        // Mensaje si el navegador no soporta compartir
+        alert("Web Share API not supported on this browser. You can copy the URL instead.");
+      }
+    });
+  </script>
 
 </body>
 </html>

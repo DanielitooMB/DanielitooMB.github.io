@@ -20,6 +20,7 @@ body {
 /*contenedor. Padre de .icon.circle*/
 .profile-container {
   width: min(640px, 92vw);
+  padding-top: 40px;
   margin: 0 auto;
   /*Ser el punto de referencia para el hijo*/
   position: relative;
@@ -115,4 +116,45 @@ body {
 
 .instagram {
   background-color: blueviolet;
+}
+
+#share-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b1a095;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.share-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  #share-button {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .share-container {
+    top: -10px;
+    position: absolute;
+    display: flex;
+    width: 38px;
+    height: 38px;
+    top: -10px;
+    right: 13px;
+    z-index: 10;
+    
+  }
 }
